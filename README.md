@@ -5,7 +5,7 @@
 ## L’objectif de ce projet était de concevoir et de mettre en place une base de données pour gérer des informations sur des modèles de voitures, leurs marques, les fondateurs de ces marques, et les types de moteurs disponibles. Cette base de données permet de stocker et d’interroger efficacement des informations sur les véhicules, leurs spécifications techniques, et les marques automobiles, tout en illustrant les relations entre ces différentes entités.
 
 ## 1- Création de la Base de Données et des Tables
-#### J'ai créé la Base de Données sur Always Data.
+#### J'ai créé la Base de Données sur Always Data qui se nomme 'benji_projet2'.
 #### Une fois la BDD créée, j'ai pu définir la structure, c'est-à-dire les Tables, sur le logiciel 'MySQL Workbench'.
 #### Voici les Tables créées :
 ##### TypesMoteurs : pour stocker les différents types de moteurs et leurs descriptions.
@@ -31,5 +31,13 @@
 ##### Mettre à jour le prix d’un modèle de voiture.
 ##### Corriger le nom d’un fondateur.
 ##### Modifier le type de moteur d’un modèle existant.
+
+# Voici mes codes ALWAYS DATA : 
+### Identifiant : benlt2305@gmail.com
+### MDP : sPIDERM@Né"à_
+
+# Code phpmyadmin :
+### Identifiant : benji
+### MDP : sPIDERM@Né"à_
 
 
