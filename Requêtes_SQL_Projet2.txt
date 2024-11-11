@@ -1,0 +1,66 @@
+1- Mettre à jour le prix d'un modèle de voiture. (Golf par exemple). 
+	UPDATE ModelesVoitures
+	SET Prix = Prix * 1.05
+	WHERE Nom_Modele = 'Golf' AND Marque = 'Volkswagen';
+
+2- Modifier le nom d'un fondateur d'une marque
+	UPDATE MarquesFondateurs
+	SET Nom_Fondateur = 'Karl Rapp'
+	WHERE Marque = 'BMW';
+
+3- Changer le type de moteur d'un modèle
+	UPDATE ModelesVoitures
+	SET ID_Type_Moteur = (SELECT ID_Type_Moteur FROM TypesMoteurs WHERE Type_Moteur = 'Hybride')
+	WHERE Nom_Modele = '208' AND Marque = 'Peugeot';
+
+
+7 Requêtes : 
+
+1- Lister tous les modèles de voitures et leurs marques
+	SELECT Marque, Nom_Modele FROM ModelesVoitures;
+
+2- Afficher tous les modèles de voitures lancés après 2020 avec leur prix et leur année de lancement :
+	SELECT Marque, Prix, Annee_Lancement FROM ModelesVoitures
+	WHERE Annee_Lancement > 2020;
+
+3- Lister les modèles de voitures avec leurs types de moteurs
+	SELECT m.Marque, m.Nom_Modele, t.Type_Moteur
+	FROM ModelesVoitures m 
+	JOIN TypesMoteurs t ON m.ID_Type_Moteur = t.ID_Type_Moteur
+
+4- Trouver la puissance moyenne des voitures pour chaque type de moteur
+	SELECT t.Type_Moteur, AVG(m.Puissance_Ch) AS 'Puissance Moyenne'
+	FROM ModelesVoitures m 
+	JOIN TypesMoteurs t ON m.ID_Type_Moteur = t.ID_Type_Moteur
+	GROUP BY t.Type_Moteur
+
+5- Lister tous les modèles de voitures pour une marque spécifique et leur année de création :
+	SELECT mf.Marque, m.Nom_Modele, mf.Annee_Creation
+	FROM ModelesVoitures m 
+	JOIN MarquesFondateurs mf ON m.ID_Fondateur = mf.ID_Fondateur
+	WHERE mf.Marque = 'Peugeot';
+
+6- Afficher le modèle de voiture avec la puissance la plus élevée et les informations de son type de moteur : 
+	SELECT m.Marque, m.Puissance_Ch, t.Type_Moteur
+	FROM ModelesVoitures m 
+	JOIN TypesMoteurs t ON m.ID_Type_Moteur = t.ID_Type_Moteur
+	WHERE m.Puissance_Ch = (SELECT MAX(Puissance_Ch) FROM ModelesVoitures);
+
+7- Lister tous les fondateurs et indiquer s’ils ont des modèles disponibles dans la base de données :
+	SELECT mf.Nom_Fondateur, mf.Marque, COUNT(m.ID_Modele) AS Nombre_Modeles
+	FROM MarquesFondateurs mf
+	LEFT JOIN ModelesVoitures m ON mf.ID_Fondateur = m.ID_Fondateur
+	GROUP BY mf.Nom_Fondateur, mf.Marque;
+
+	
+	
+	
+	
+
+
+
+	
+	
+	
+
+	
