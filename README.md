@@ -32,12 +32,5 @@
 ##### Corriger le nom d’un fondateur.
 ##### Modifier le type de moteur d’un modèle existant.
 
-# Voici mes codes ALWAYS DATA : 
-### Identifiant : benlt2305@gmail.com
-### MDP : sPIDERM@Né"à_
-
-# Code phpmyadmin :
-### Identifiant : benji
-### MDP : sPIDERM@Né"à_
 
 
